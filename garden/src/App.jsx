@@ -1,13 +1,15 @@
-import './App.css';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { NotFound } from './components/NotFound';
+import "./App.css";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { GetDiscount } from "./components/GetDiscount";
+import { SaleBanner } from "./components/Sale";
 
 function App() {
   return (
     <div>
       <Header />
-      <NotFound />
+      <SaleBanner />
+      <GetDiscount />
       <Footer />
     </div>
   );
