@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1384px;
+  height: 72px;
+  background: #fff;
+
+  margin: 19px auto 76px auto;
+  
+}
+.logocontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 51px;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+}
+
+.catalog {
+  border-radius: 5px;
+  border: 2px solid #393;
+  background: #393;
+  padding: 14px 30px 15px 30px;
+  gap: 5px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 201px;
+
+    
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 331px;
+  height: 21px;
+}
+li {
+  list-style: none;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
