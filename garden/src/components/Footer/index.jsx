@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./style.module.css";
-import map from "../../images/map.png";
 import instagram from "../../images/instagram.svg";
 import whatssapp from "../../images/whatsapp.svg";
+import { Map } from "../Map";
 
 export const Footer = () => {
   return (
@@ -32,7 +32,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className={style.map}>
-        <img src={map} alt="map" />
+        <Map />
       </div>
     </div>
   );
