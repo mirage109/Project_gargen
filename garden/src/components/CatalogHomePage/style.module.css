@@ -1,4 +1,16 @@
-.container{
-    width: 1440px;
-    margin: 0 auto;
+.container {
+  width: 1440px;
+  margin: 0 auto 0 auto;
+  padding: 48px 32px 61px 32px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.title {
+  display: flex;
+  flex-direction: row;
+}
+.ul {
+  display: flex;
+ justify-content: space-between;
 }

@@ -1,0 +1,22 @@
+.container {
+  width: 300px;
+}
+.img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5%;
+}
+.priceBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.h6 {
+  color: #3a3a3a;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+}
