@@ -1,20 +1,26 @@
+
+import React from "react";
 import { ProductItem } from "../ProductItem";
 import { useGetAllProductsQuery } from "../../redux/productsApi";
 import { NavLink } from "react-router-dom";
 import style from "./style.module.css";
+import { ErrorPage } from "../../pages/ErrorPage";
 import { Filter } from "../Filter";
 
-export const ProductList = () => {
+export const DiscountedProductList = () => {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
+
+  const discountedProducts = data.filter((el) => el.discont_price !== null);
+
   return (
     <div className={style.container}>
-    <h2 className={style.h2}>All products</h2>
-    <Filter/>
+      <h2 className={style.h2}>Products with sale</h2>
+      <Filter/>
       {isLoading && <p>Loading...</p>}
-      {error && <p>Error</p>}
+      {error &&  <ErrorPage/>}
       <ul className={style.ul}>
-        {data.map((el) => (
-          <NavLink to={`/product/${el.id}`} key={el.id}>
+        {discountedProducts.map((el) => (
+          <NavLink to={`/products/${el.id}`} key={el.id}>
             <ProductItem {...el} />
           </NavLink>
         ))}

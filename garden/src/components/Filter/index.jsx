@@ -5,16 +5,31 @@ export const Filter = () => {
   return (
     <div className={style.container}>
       <div>
-        <label className={style.label} htmlFor="Price"> Price </label>
-        <input className={style.priceInput} placeholder="from" />
-        <input className={style.priceInput} placeholder="to"/>
+        <label className={style.label} htmlFor="Price">
+          {" "}
+          Price{" "}
+        </label>
+        <input
+          className={style.priceInput}
+          inputMode="numeric"
+          maxLength="4"
+          placeholder="from"
+        />
+        <input
+          className={style.priceInput}
+          inputMode="numeric"
+          maxLength="4"
+          placeholder="to"
+        />
       </div>
       <div>
         <label className={style.label}> Discounted items</label>
-        <input type="checkbox" className={style.checkbox} />
+        <input type="checkbox" />
       </div>
       <div>
-        <label className={style.label} htmlFor="sortOption">Sorted:</label>
+        <label className={style.label} htmlFor="sortOption">
+          Sorted
+        </label>
         <select className={style.select} id="sortOption">
           <option value="Default">Default</option>
           <option value="Ascending">Ascending</option>

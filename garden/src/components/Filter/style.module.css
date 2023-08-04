@@ -6,7 +6,7 @@
   font-weight: 600;
   line-height: 130%; /* 26px */
   letter-spacing: 0.6px;
-  margin-right: 25px;
+  margin-right: 18px;
 }
 .priceInput {
   width: 103px;
@@ -14,7 +14,15 @@
   flex-shrink: 0;
   border-radius: 7px;
   border: 1px solid #000;
-  margin-right: 20px;
+  margin-right: 15px;
+  color:  #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: 0.48px;
+  padding-left: 10px;
 }
 .container {
   width: 1440px;
@@ -28,4 +36,14 @@
   flex-shrink: 0;
   border-radius: 7px;
   border: 1px solid #000;
+}
+
+.priceInput::placeholder {
+  color: #797979;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: 0.48px;
 }

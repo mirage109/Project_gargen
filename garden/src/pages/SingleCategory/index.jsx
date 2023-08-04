@@ -5,6 +5,7 @@ import { ErrorPage } from "../ErrorPage";
 import { ProductItem } from "../../components/ProductItem";
 import style from "./style.module.css";
 import { NavLink } from "react-router-dom";
+import { Filter } from "../../components/Filter";
 
 export const SingleCategory = () => {
   const { id } = useParams();
@@ -18,10 +19,11 @@ export const SingleCategory = () => {
         <ErrorPage />
       ) : (
         <div className={style.container}>
-          <h1>{data.category.title}</h1>
+          <h2 className={style.h2}>{data.category.title}</h2>
+          <Filter/>
           <ul className={style.ul}>
             {dates.map((el, i) => (
-              <NavLink to={`/product/${el.id}`} key={el.id}>
+              <NavLink to={`/products/${el.id}`} key={el.id}>
                 <ProductItem key={el.id} {...el} />
               </NavLink>
             ))}

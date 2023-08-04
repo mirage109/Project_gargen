@@ -24,7 +24,7 @@ export const Footer = () => {
         </div>
         <div className={style.visitcardAdress}>
           <h2 className={style.h2}>Address</h2>
-          <p className={style.address}>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</p>
+          <a href="https://www.google.com/search?q=telranDE" rel="noreferrer" target="_blank" className={style.address}>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</a>
           <div className={style.workHours}>
             <h6 className={style.h6}>Working Hours:</h6>
             <p className={style.hours}>24 hours a day</p>

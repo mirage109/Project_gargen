@@ -5,8 +5,8 @@ export const ErrorPage = () => {
   const error = useRouteError();
     console.log(error);
   return (
-    <>
+    <div>
       <NotFound />
-    </>
+    </div>
   );
 };

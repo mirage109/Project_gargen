@@ -18,7 +18,7 @@ export const DiscountHomePage = () => {
       {error && <p>Error</p>}
       <ul className={style.ul}>
         {limitedDiscountedProducts.map((el) => (
-          <NavLink to={`/product/${el.id}`} key={el.id}>
+          <NavLink to={`/products/${el.id}`} key={el.id}>
             <ProductItem {...el} />
           </NavLink>
         ))}

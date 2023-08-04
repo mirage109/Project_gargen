@@ -1,0 +1,127 @@
+:root {
+  --font-family: Montserrat;
+  --line-height: 130%;
+  --letter-spacing: 0.6px;
+}
+
+.priceBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 422px;
+  align-items: baseline;
+}
+
+.img {
+  width: 710px;
+  height: 710px;
+  object-fit:contain;
+
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  width: 422px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 1440px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
+  padding-bottom: 100px;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+.title {
+  color: #3a3a3a;
+  font-family: var(--font-family);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  padding-bottom: 34px;
+  padding-top: 91px;
+  width: 1380px;
+  margin: 0 auto;
+}
+
+.description {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.button {
+  padding: 25px 120px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid #393;
+  background: #393;
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f1fff1;
+  color: #393;
+}
+
+.bigPrice {
+  color: #000;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 2.1px;
+}
+
+.h3 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.smallPrice {
+  color: #8b8b8b;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration-line: line-through;
+}
+
+.span {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.isPink {
+  color: #ff32a1;
+}
+.discount {
+  color: #ff32a1;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.84px;
+}
+
+.isBlack {
+  color: #000;
+}
