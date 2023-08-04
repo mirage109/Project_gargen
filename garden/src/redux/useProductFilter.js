@@ -7,21 +7,15 @@ export const useProductFilter = (initialData) => {
   const [toPrice, setToPrice] = useState("");
   const { data } = initialData;
 
-  const discountedProducts = data.filter((el) => el.discont_price !== null);
-
-  const sortByPriceAscending = (products) => {
-    return products.slice().sort((a, b) => {
-      const priceA = a.discont_price !== null ? a.discont_price : a.price;
-      const priceB = b.discont_price !== null ? b.discont_price : b.price;
-      return priceA - priceB;
-    });
+  const getDiscountedProducts = (products) => {
+    return products.filter((el) => el.discont_price !== null);
   };
 
-  const sortByPriceDescending = (products) => {
+  const sortByPrice = (products, ascending) => {
     return products.slice().sort((a, b) => {
       const priceA = a.discont_price !== null ? a.discont_price : a.price;
       const priceB = b.discont_price !== null ? b.discont_price : b.price;
-      return priceB - priceA;
+      return ascending ? priceA - priceB : priceB - priceA;
     });
   };
 
@@ -38,14 +32,19 @@ export const useProductFilter = (initialData) => {
 
   let sortedProducts = data;
 
+  if (showDiscounted===true) {
+    sortedProducts = getDiscountedProducts(sortedProducts);
+  }
   if (sortOption === "Ascending") {
-    sortedProducts = sortByPriceAscending(data);
+    sortedProducts = sortByPrice(sortedProducts, true);
   } else if (sortOption === "Descending") {
-    sortedProducts = sortByPriceDescending(data);
+    sortedProducts = sortByPrice(sortedProducts, false);
   }
   if (fromPrice !== "" || toPrice !== "") {
     sortedProducts = filterProductsByPrice(sortedProducts);
   }
+ 
+
 
   return {
     showDiscounted,
@@ -56,7 +55,10 @@ export const useProductFilter = (initialData) => {
     setFromPrice,
     toPrice,
     setToPrice,
-    filteredProducts: sortedProducts, 
-    discountedProducts,
+    sortedProducts,
   };
 };
+
+
+
+

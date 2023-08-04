@@ -9,7 +9,7 @@ import { useProductFilter } from "../../redux/useProductFilter.js";
 export const ProductList = () => {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
   const {
-    filteredProducts,
+    sortedProducts,
     showDiscounted,
     setShowDiscounted,
     sortOption,
@@ -18,7 +18,6 @@ export const ProductList = () => {
     setFromPrice,
     toPrice,
     setToPrice,
-    discountedProducts,
   } = useProductFilter({ data });
 
   return (
@@ -37,13 +36,7 @@ export const ProductList = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>Error</p>}
       <ul className={style.ul}>
-        {showDiscounted
-          ? discountedProducts.map((el) => (
-              <NavLink to={`/products/${el.id}`} key={el.id}>
-                <ProductItem {...el} />
-              </NavLink>
-            ))
-          : filteredProducts.map((el) => (
+        {sortedProducts.map((el) => (
               <NavLink to={`/products/${el.id}`} key={el.id}>
                 <ProductItem {...el} />
               </NavLink>
