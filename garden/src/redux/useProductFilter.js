@@ -1,4 +1,3 @@
-// useProductFilter.js
 import { useState } from "react";
 
 export const useProductFilter = (initialData) => {
@@ -37,15 +36,16 @@ export const useProductFilter = (initialData) => {
     });
   };
 
-  const sortedProducts = sortOption === "Ascending"
-    ? sortByPriceAscending(data)
-    : sortOption === "Descending"
-    ? sortByPriceDescending(data)
-    : data;
+  let sortedProducts = data;
 
-  const filteredProducts = fromPrice !== "" || toPrice !== ""
-    ? filterProductsByPrice(sortedProducts)
-    : sortedProducts;
+  if (sortOption === "Ascending") {
+    sortedProducts = sortByPriceAscending(data);
+  } else if (sortOption === "Descending") {
+    sortedProducts = sortByPriceDescending(data);
+  }
+  if (fromPrice !== "" || toPrice !== "") {
+    sortedProducts = filterProductsByPrice(sortedProducts);
+  }
 
   return {
     showDiscounted,
@@ -56,8 +56,7 @@ export const useProductFilter = (initialData) => {
     setFromPrice,
     toPrice,
     setToPrice,
-    filteredProducts,
+    filteredProducts: sortedProducts, 
     discountedProducts,
   };
 };
-

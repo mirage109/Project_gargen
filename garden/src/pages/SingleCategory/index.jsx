@@ -6,11 +6,15 @@ import { ProductItem } from "../../components/ProductItem";
 import style from "./style.module.css";
 import { NavLink } from "react-router-dom";
 import { Filter } from "../../components/Filter";
+import { useProductFilter } from "../../redux/useProductFilter.js";
 
 export const SingleCategory = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetCategoryItemQuery(id);
   const dates = data && data.data;
+
+
+  
   return (
     <div>
       {isLoading ? (

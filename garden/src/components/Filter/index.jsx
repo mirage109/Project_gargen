@@ -2,6 +2,7 @@ import React from "react";
 import style from "./style.module.css";
 
 export const Filter = ({
+  isDiscounted = false,
   showDiscounted,
   setShowDiscounted,
   sortOption,
@@ -49,14 +50,16 @@ export const Filter = ({
           onChange={handleToPriceChange}
         />
       </div>
-      <div>
-        <label className={style.label}> Discounted items</label>
-        <input
-          type="checkbox"
-          checked={showDiscounted}
-          onChange={() => setShowDiscounted(!showDiscounted)}
-        />
-      </div>
+      {!isDiscounted && (
+        <div>
+          <label className={style.label}> Discounted items</label>
+          <input
+            type="checkbox"
+            checked={showDiscounted}
+            onChange={() => setShowDiscounted(!showDiscounted)}
+          />
+        </div>
+      )}
       <div>
         <label className={style.label} htmlFor="sortOption">
           Sorted
@@ -75,5 +78,3 @@ export const Filter = ({
     </div>
   );
 };
-
-

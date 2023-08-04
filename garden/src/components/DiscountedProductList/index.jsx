@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ProductItem } from "../ProductItem";
 import { useGetAllProductsQuery } from "../../redux/productsApi";
@@ -15,9 +14,9 @@ export const DiscountedProductList = () => {
   return (
     <div className={style.container}>
       <h2 className={style.h2}>Products with sale</h2>
-      <Filter/>
+      <Filter isDiscounted />
       {isLoading && <p>Loading...</p>}
-      {error &&  <ErrorPage/>}
+      {error && <ErrorPage />}
       <ul className={style.ul}>
         {discountedProducts.map((el) => (
           <NavLink to={`/products/${el.id}`} key={el.id}>
