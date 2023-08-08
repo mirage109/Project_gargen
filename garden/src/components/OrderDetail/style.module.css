@@ -1,0 +1,85 @@
+.container {
+  width: 496px;
+  height: 393px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 21px;
+  border: 2px solid #000;
+  gap: 20px;
+}
+.h2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.84px;
+  margin: 0 auto;
+  width: 446px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+.currency{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.3px; 
+}
+.h4 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 31.2px */
+  letter-spacing: 0.72px;
+}
+.finalPrice {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.96px;
+}
+.input {
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #fff;
+  margin: 0 auto;
+  width: 446px;
+  height: 73px;
+  flex-shrink: 0;
+}
+.priceBox {
+  display: flex;
+  flex-direction: row;
+  width: 446px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  align-items: baseline;
+}
+.button {
+  width: 446px;
+  padding: 20px 185px 20px 143px;
+  gap: 10px;
+  border-radius: 17px;
+  background: #393;
+  color: #fff;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.84px;
+  margin: 0 auto;
+}

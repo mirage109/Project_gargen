@@ -12,9 +12,18 @@ export const SingleCategory = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetCategoryItemQuery(id);
   const dates = data && data.data;
+  const {
+    sortedProducts,
+    showDiscounted,
+    setShowDiscounted,
+    sortOption,
+    setSortOption,
+    fromPrice,
+    setFromPrice,
+    toPrice,
+    setToPrice,
+  } = useProductFilter({data: dates });
 
-
-  
   return (
     <div>
       {isLoading ? (
@@ -24,9 +33,18 @@ export const SingleCategory = () => {
       ) : (
         <div className={style.container}>
           <h2 className={style.h2}>{data.category.title}</h2>
-          <Filter/>
+          <Filter
+            showDiscounted={showDiscounted}
+            setShowDiscounted={setShowDiscounted}
+            sortOption={sortOption}
+            setSortOption={setSortOption}
+            fromPrice={fromPrice}
+            setFromPrice={setFromPrice}
+            toPrice={toPrice}
+            setToPrice={setToPrice}
+          />
           <ul className={style.ul}>
-            {dates.map((el, i) => (
+            {sortedProducts.map((el, i) => (
               <NavLink to={`/products/${el.id}`} key={el.id}>
                 <ProductItem key={el.id} {...el} />
               </NavLink>

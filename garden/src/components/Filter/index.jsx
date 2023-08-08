@@ -26,7 +26,7 @@ export const Filter = ({
 
   return (
     <div className={style.container}>
-      <div>
+      <div className={style.boxContainer}>
         <label className={style.label} htmlFor="Price">
           {" "}
           Price{" "}
@@ -34,6 +34,8 @@ export const Filter = ({
         <input
           className={style.priceInput}
           type="number"
+          min="0"
+          max="200"
           inputMode="numeric"
           maxLength="4"
           placeholder="from"
@@ -43,6 +45,8 @@ export const Filter = ({
         <input
           className={style.priceInput}
           type="number"
+          min="0"
+          max="200"
           inputMode="numeric"
           maxLength="4"
           placeholder="to"
@@ -51,16 +55,17 @@ export const Filter = ({
         />
       </div>
       {!isDiscounted && (
-        <div>
+        <div className={style.boxContainer}>
           <label className={style.label}> Discounted items</label>
           <input
+            className={style.сustomCheckbox}
             type="checkbox"
             checked={showDiscounted}
             onChange={() => setShowDiscounted(!showDiscounted)}
           />
         </div>
       )}
-      <div>
+      <div className={style.boxContainer}>
         <label className={style.label} htmlFor="sortOption">
           Sorted
         </label>

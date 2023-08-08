@@ -1,0 +1,15 @@
+.img {
+  width: 192px;
+  height: 166px;
+  border-radius: 5%;
+}
+.counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 140px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #000;
+}

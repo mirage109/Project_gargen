@@ -3,7 +3,9 @@ import style from "./style.module.css";
 import logo from "../../images/logo.svg";
 import shoppingbag from "../../images/shopping_bag_icon.svg";
 import { NavLink } from "react-router-dom";
+
 export const Header = () => {
+  
   return (
     <header className={style.header}>
       <div className={style.logocontainer}>
@@ -29,9 +31,9 @@ export const Header = () => {
             <NavLink to="/sales">All sales</NavLink>
           </li>
         </ul>
-        <div className={style.shopingbag}>
+        <div  >
           <NavLink to="/cart">
-          <img src={shoppingbag} alt="shoppingbag" />
+          <img src={shoppingbag}  alt="shoppingbag" />
           </NavLink>
         </div>
       </div>

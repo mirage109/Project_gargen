@@ -1,8 +1,16 @@
 import React from "react";
 import style from "./style.module.css";
 import line from "../../images/line.png";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../redux/basketSlice.js"
 
 export const ProductInfo = ({ dates, discount }) => {
+  const dispatch = useDispatch();
+  
+  const handleAddToCart = () => {
+    dispatch(addToBasket(dates)); 
+  };
+
   return (
     <div>
       <h2 className={style.title}>{dates.title}</h2>
@@ -35,7 +43,7 @@ export const ProductInfo = ({ dates, discount }) => {
               </p>
             </div>
           )}
-          <button className={style.button}>To cart</button>
+          <button className={style.button} onClick={handleAddToCart}>To cart</button>
           <img src={line} alt="line" />
           <div>
             <h3 className={style.h3}>Description</h3>

@@ -13,7 +13,7 @@ export const DiscountHomePage = () => {
 
   return (
     <div className={style.container}>
-      <h2 className={style.h2}>Sales</h2>
+      <h2 className={style.h2}>Sale</h2>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error</p>}
       <ul className={style.ul}>
