@@ -3,24 +3,31 @@ import { BasketItem } from "../../components/BasketItem";
 import { OrderDetail } from "../../components/OrderDetail";
 import React from "react";
 import { useSelector } from "react-redux";
+import line from "../../images/linebasket.png";
+import style from "./style.module.css";
 
 export const BasketPage = () => {
-  const basketProducts = useSelector(state => state.basket.products);
+  const basketProducts = useSelector((state) => state.basket.products);
   return (
     <div>
-      {basketProducts.length  === 0 ? (
+      {basketProducts.length === 0 ? (
         <BasketEmpty />
       ) : (
-        <>
-        <h2>Shopping cart</h2>
-        <h4> Back to store</h4>
-        {basketProducts.map(product => (
-          <BasketItem key={product.id} product={product} />
-        ))}
-        <OrderDetail />
-      </>
+        <div className={style.container}>
+          <h2 className={style.h2}>Shopping cart</h2>
+          <h4> Back to store</h4>
+          
+          <div className={style.basketDetail}>
+            <div className={style.basketContent}>
+            <img src={line} alt="line" />
+              {basketProducts.map((product) => (
+                <BasketItem key={product.id} product={product} />
+              ))}
+            </div>
+            <OrderDetail />
+          </div>
+        </div>
       )}
-     
     </div>
   );
 };

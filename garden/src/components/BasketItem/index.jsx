@@ -2,6 +2,10 @@ import React from "react";
 import style from "./style.module.css";
 import { useDispatch } from "react-redux";
 import { removeFromBasket, updateQuantity } from "../../redux/basketSlice";
+import line from "../../images/linebasket.png";
+import minus from "../../images/minus.svg";
+import plus from "../../images/plus.svg";
+import deleteButton from "../../images/delete.svg";
 
 export const BasketItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -26,22 +30,36 @@ export const BasketItem = ({ product }) => {
 
   return (
     <div>
-      <img
-        className={style.img}
-        src={`http://localhost:3333${product.image}`}
-        alt={product.title}
-      />
-      <h3>{product.title}</h3>
-      <div>
-        <p>{product.price}$</p>
-        <p>{product.discont_price}</p>
+      <div className={style.gridContainer}>
+        <img
+          className={style.img}
+          src={`http://localhost:3333${product.image}`}
+          alt={product.title}
+        />
+        <div className={style.column2}>
+          <h3>{product.title}</h3>
+          <div className={style.counter}>
+            <button className={style.buttonCounter} onClick={handleDecrement}>
+              <img src={minus} alt="-" />
+            </button>
+            <p className={style.quantity}> {product.quantity}</p>
+            <button className={style.buttonCounter} onClick={handleIncrement}>
+              <img src={plus} alt="+" />
+            </button>
+          </div>
+        </div>
+        <div className={style.column3}>
+          <p>
+            {product.discont_price}
+            <span>$</span>
+          </p>
+          <p>{product.price}$</p>
+        </div>
+        <button className={style.buttonDelete} onClick={handleRemoveFromBasket}>
+          <img src={deleteButton} alt="X" />
+        </button>
       </div>
-      <div className={style.counter}>
-        <button onClick={handleDecrement}>-</button>
-        <p> {product.quantity}</p>
-        <button onClick={handleIncrement}>+</button>
-      </div>
-      <button onClick={handleRemoveFromBasket}>X</button>
+      <img src={line} alt="line" className={style.line} />
     </div>
   );
 };

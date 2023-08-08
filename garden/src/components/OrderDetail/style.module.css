@@ -70,9 +70,8 @@
   padding: 20px 185px 20px 143px;
   gap: 10px;
   border-radius: 17px;
-  background: #393;
-  color: #fff;
   border: none;
+  background: #393;
   color: #fff;
   text-align: center;
   font-family: Montserrat;
@@ -82,4 +81,9 @@
   line-height: 130%;
   letter-spacing: 0.84px;
   margin: 0 auto;
+}
+.button:hover {
+  background: #f1fff1;
+  color: #393;
+  border: 2px solid #393;
 }
