@@ -71,5 +71,26 @@
 .column3 {
   grid-column: 3 / span 1;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bigPrice {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 1.2px;
+}
+.smallPrice {
+  color: #8b8b8b;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; 
+  letter-spacing: 0.6px;
+  text-decoration-line: line-through;
 }

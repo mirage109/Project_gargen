@@ -12,7 +12,7 @@ export const SaleBanner = () => {
         <button className={style.button}><NavLink to="/sales">Sale</NavLink></button>
       </div>
       <div className={style.imageContainer}>
-        <img src={plant} alt="plant" />
+        <img src={plant} alt="plant" className={style.plantImage} />
       </div>
     </div>
   );

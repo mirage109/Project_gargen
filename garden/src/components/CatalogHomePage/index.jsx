@@ -10,8 +10,8 @@ export const CatalogHomePage = () => {
   return (
     <div className={style.container}>
       <div className={style.title}>
-        <h2>Catalog</h2>
-        <button>
+        <h2 className={style.h2}>Catalog</h2>
+        <button className={style.button}>
           <NavLink to="/category">All categories</NavLink>
         </button>
       </div>

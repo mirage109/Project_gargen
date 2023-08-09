@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1384px;
+  max-width: 1384px;
   height: 72px;
   background: #fff;
-  margin: 19px auto 20px auto;
+  margin: 0 auto;
+  padding-top: 19px;
 }
 .logocontainer {
   display: flex;
@@ -32,7 +33,7 @@
   font-weight: 700;
   line-height: normal;
 }
-.navContainer{
+.navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,4 +55,3 @@ li {
   font-weight: 500;
   line-height: 130%;
 }
-

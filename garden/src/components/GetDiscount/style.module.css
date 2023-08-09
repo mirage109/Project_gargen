@@ -1,5 +1,5 @@
 .getDiscount {
-  width: 1440px;
+  max-width: 1440px; 
   height: 476px;
   background: linear-gradient(223deg, #393 0%, #006300 100%);
   margin: 0 auto 0 auto;
@@ -7,6 +7,9 @@
   flex-direction: row;
   align-items: center;
   gap: 199px;
+}
+.getDiscountImage{
+  width: 40%
 }
 .getDiscount img {
   width: 422px;

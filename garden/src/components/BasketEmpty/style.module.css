@@ -13,4 +13,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
+  
+}
+.isDecoreted{
+  text-decoration: underline;
 }

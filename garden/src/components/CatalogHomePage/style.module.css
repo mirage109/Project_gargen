@@ -1,16 +1,43 @@
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto 0 auto;
   padding: 48px 32px 61px 32px;
   display: flex;
   flex-direction: column;
-  
 }
 .title {
   display: flex;
   flex-direction: row;
+  gap: 100px;
+  align-items: center;
+  height: 52px;
+  margin-bottom: 21px;
 }
 .ul {
   display: flex;
- justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.h2 {
+ 
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 52px */
+  letter-spacing: 1.2px;
+}
+.button {
+  width: 120px;
+  height: 31px;
+  color: #8b8b8b;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 15.6px */
+  letter-spacing: 0.36px;
 }

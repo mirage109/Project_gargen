@@ -1,12 +1,11 @@
-.container{
-    width: 318px;
-    height: 400px;
-   
+.container {
+  width: 318px;
+  height: 400px;
 }
 .img {
   width: 318px;
   height: 350px;
-  gap:20px;
+  gap: 20px;
   object-fit: cover;
 }
 .h3 {
@@ -19,5 +18,5 @@
   letter-spacing: 0.54px;
   text-align: center;
   height: 23px;
-  margin-top:20px;
+  margin-top: 20px;
 }

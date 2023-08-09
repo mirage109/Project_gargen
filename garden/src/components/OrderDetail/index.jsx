@@ -11,14 +11,14 @@ export const OrderDetail = () => {
           return total + product.price * product.quantity; 
         }
       }, 0);
-    
+      const formattedTotalAmount = totalAmount.toFixed(2);
 
   return (
     <div className={style.container}>
       <h2 className={style.h2}>Order details</h2>
       <div className={style.priceBox}>
         <h4 className={style.h4}>Total</h4>
-        <p className={style.finalPrice}>{totalAmount}<span className={style.currency}>$</span></p>
+        <p className={style.finalPrice}>{formattedTotalAmount}<span className={style.currency}>$</span></p>
       </div>
       <input className={style.input} type="tel" placeholder="Phone number" />
       <button className={style.button}>Order</button>

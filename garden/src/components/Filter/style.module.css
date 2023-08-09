@@ -25,7 +25,7 @@
   padding-left: 10px;
 }
 .container {
-  width: 1440px;
+  max-width: 1440px;
   display: flex;
   flex-direction: row;
   margin-bottom: 34px;

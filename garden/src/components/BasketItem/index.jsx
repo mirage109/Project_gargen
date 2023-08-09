@@ -49,12 +49,18 @@ export const BasketItem = ({ product }) => {
           </div>
         </div>
         <div className={style.column3}>
-          <p>
+        {product.discont_price !== null ? (
+          <>
+          <p className={style.bigPrice}>
             {product.discont_price}
             <span>$</span>
           </p>
-          <p>{product.price}$</p>
-        </div>
+          <p className={style.smallPrice}>{product.price}<span>$</span></p>
+          </>
+        ) : (
+          <p className={style.bigPrice}>{product.price}<span>$</span></p>
+        )}
+      </div>
         <button className={style.buttonDelete} onClick={handleRemoveFromBasket}>
           <img src={deleteButton} alt="X" />
         </button>
