@@ -12,7 +12,7 @@ import { ErrorPage } from "./pages/ErrorPage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { SkuPage } from "./pages/SkuPage";
-import { SingleCategory } from "./pages/SingleCategory";
+import { SingleCategory } from "./pages/SingleCategoryPage";
 
 const router = createBrowserRouter([
   {
