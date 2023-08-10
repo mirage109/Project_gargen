@@ -2,6 +2,8 @@ import React from "react";
 import style from "./style.module.css";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ProductItem = ({ id, image, title, price, discont_price }) => {
   const discount = () => {
@@ -9,7 +11,7 @@ export const ProductItem = ({ id, image, title, price, discont_price }) => {
   };
   const dispatch = useDispatch();
   const handleAddToCart = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const product = {
       id,
       image,
@@ -18,7 +20,13 @@ export const ProductItem = ({ id, image, title, price, discont_price }) => {
       discont_price,
     };
     dispatch(addToBasket(product));
+
+    toast.success('Product added to cart!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, 
+    });
   };
+
   return (
     <div className={style.container}>
       <div className={style.imageContainer}>
