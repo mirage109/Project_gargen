@@ -3,15 +3,22 @@ import style from "./style.module.css";
 import line from "../../images/line.png";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice.js"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const ProductInfo = ({ dates, discount }) => {
   const dispatch = useDispatch();
   
   const handleAddToCart = () => {
-    dispatch(addToBasket(dates)); 
+    dispatch(addToBasket(dates));
+    
+    toast.success('Product added to cart!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 3000, // 3 seconds
+    });
   };
-
+  
   return (
     <div>
       <h2 className={style.title}>{dates.title}</h2>

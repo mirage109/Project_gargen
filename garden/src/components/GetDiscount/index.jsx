@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
 import gnom from "../../images/gnom.png";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const GetDiscount = () => {
   const [phoneNumber, setPhoneNumber] = useState("+49"); 
@@ -8,6 +11,12 @@ export const GetDiscount = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    if (phoneNumber.trim() === "" || phoneNumber.length < 10) {
+      toast.error("Phone number is required and should have at least 10 digits.");
+      return;
+    }
+  
     setIsFormSubmitted(true);
   };
 

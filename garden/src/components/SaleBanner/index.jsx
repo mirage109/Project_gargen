@@ -9,7 +9,10 @@ export const SaleBanner = () => {
       <div className={style.textContainer}>
         <h1 className={style.h1}>Sale</h1>
         <h2 className={style.h2}>New season</h2>
-        <button className={style.button}><NavLink to="/sales">Sale</NavLink></button>
+        <NavLink to="/sales">
+          {" "}
+          <button className={style.button}>Sale</button>
+        </NavLink>
       </div>
       <div className={style.imageContainer}>
         <img src={plant} alt="plant" className={style.plantImage} />
