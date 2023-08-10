@@ -3,7 +3,7 @@ import style from "./style.module.css";
 import line from "../../images/line.png";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice.js"
-import { useState } from "react";
+
 
 export const ProductInfo = ({ dates, discount }) => {
   const dispatch = useDispatch();

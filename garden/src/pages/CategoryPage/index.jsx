@@ -7,6 +7,7 @@ export const CategoryPage = () => {
     const { data, error, isLoading } = useGetAllCategoriesQuery();
     return(
         <div className={style.container}>
+          <h2 className={style.title}>Categories</h2>
         {isLoading ? (
             <p>loading...</p>
           ) : error ? (

@@ -1,0 +1,29 @@
+.toast {
+  position: fixed;
+  border: 2px solid #393;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #f1fff1;
+  color: #393;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin: 10px; 
+  z-index: 1000;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
