@@ -15,7 +15,7 @@ export const CatalogHomePage = () => {
           <NavLink to="/category">All categories</NavLink>
         </button>
       </div>
-      <div>
+      <div >
       {isLoading ? (
         <p>loading...</p>
       ) : error ? (

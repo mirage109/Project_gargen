@@ -2,7 +2,7 @@ import React from "react";
 import style from "./style.module.css";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const ProductItem = ({ id, image, title, price, discont_price }) => {

@@ -11,8 +11,10 @@ import { BasketPage } from "./pages/BasketPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import { SkuPage } from "./pages/SkuPage";
+import { SkuPage } from "./pages/SingleProductPage";
 import { SingleCategory } from "./pages/SingleCategoryPage";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "./redux/store";
 
 const router = createBrowserRouter([
   {
@@ -44,11 +46,11 @@ const router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        path: '/products/:id',
+        path: "/products/:id",
         element: <SkuPage />,
       },
       {
-        path: '/category/:id',
+        path: "/category/:id",
         element: <SingleCategory />,
       },
     ],
@@ -57,9 +59,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
-  </Provider>
+  <PersistGate loading={null} persistor={persistor}>
+    <Provider store={store}>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </Provider>
+  </PersistGate>
 );

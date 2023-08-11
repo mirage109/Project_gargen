@@ -55,3 +55,25 @@ li {
   font-weight: 500;
   line-height: 130%;
 }
+
+.itemCount {
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  background-color: #393;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.shoppingBagLink {
+  position: relative;
+  display: inline-block;
+}
+.activeLink {
+  color: #393; 
+  font-weight: bold; 
+}
+

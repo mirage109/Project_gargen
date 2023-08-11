@@ -1,17 +1,34 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { productsApi} from "./productsApi";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { productsApi } from "./productsApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import basketReducer from "./basketSlice";
+import {
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import persistedBasketReducer from "./persistConfig";
+
+export const rootReducer = combineReducers({
+  basket: persistedBasketReducer,
+  [productsApi.reducerPath]: productsApi.reducer,
+});
 
 export const store = configureStore({
-  reducer: {
-    basket: basketReducer, 
-    [productsApi.reducerPath]: productsApi.reducer,
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) => [
-    ...getDefaultMiddleware(),
+    ...getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
     productsApi.middleware,
   ],
 });
 
 setupListeners(store.dispatch);
+
+export const persistor = persistStore(store);

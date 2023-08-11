@@ -33,7 +33,7 @@ export const GetDiscount = () => {
       <div className={style.getDiscountForm}>
         {isFormSubmitted ? (
           <div>
-            <h2 className={style.h2}>Sucsess!</h2>
+            <h2 className={style.h2}>Success!</h2>
             <p className={style.p}>Check your text <br/> messages.</p>
           </div>
         ) : (

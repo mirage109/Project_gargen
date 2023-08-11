@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: [], 
+  products: [],
   totalAmount: 0,
+  totalItems: 0, 
 };
 
 const basketSlice = createSlice({
@@ -11,7 +12,9 @@ const basketSlice = createSlice({
   reducers: {
     addToBasket: (state, action) => {
       const newProduct = action.payload;
-      const existingProduct = state.products.find(product => product.id === newProduct.id);
+      const existingProduct = state.products.find(
+        (product) => product.id === newProduct.id
+      );
 
       if (existingProduct) {
         existingProduct.quantity += 1;
@@ -19,30 +22,39 @@ const basketSlice = createSlice({
         state.products.push({ ...newProduct, quantity: 1 });
       }
       state.totalAmount += newProduct.price;
+      state.totalItems += 1;
     },
     removeFromBasket: (state, action) => {
       const productId = action.payload;
-      const removedProduct = state.products.find(product => product.id === productId);
+      const removedProduct = state.products.find(
+        (product) => product.id === productId
+      );
 
       if (removedProduct) {
-        state.totalAmount -= removedProduct.price * removedProduct.quantity; 
-        state.products = state.products.filter(product => product.id !== productId);
+        state.totalAmount -= removedProduct.price * removedProduct.quantity;
+        state.products = state.products.filter(
+          (product) => product.id !== productId
+        );
+        state.totalItems -= removedProduct.quantity; 
       }
     },
     updateQuantity: (state, action) => {
       const { itemId, quantity } = action.payload;
-      const existingProduct = state.products.find(product => product.id === itemId);
-      
+      const existingProduct = state.products.find(
+        (product) => product.id === itemId
+      );
+
       if (existingProduct) {
-        state.totalAmount += existingProduct.price * (quantity - existingProduct.quantity); 
+        state.totalAmount +=
+          existingProduct.price * (quantity - existingProduct.quantity);
+        state.totalItems += quantity - existingProduct.quantity; 
         existingProduct.quantity = quantity;
       }
     },
   },
 });
 
-
-
-export const { addToBasket, removeFromBasket, updateQuantity  } = basketSlice.actions;
+export const { addToBasket, removeFromBasket, updateQuantity } =
+  basketSlice.actions;
 
 export default basketSlice.reducer;
