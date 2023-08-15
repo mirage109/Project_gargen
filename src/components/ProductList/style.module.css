@@ -1,0 +1,23 @@
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  gap: 4%;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 32px 61px 32px;
+}
+.h2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 52px */
+  letter-spacing: 1.2px;
+  margin-bottom: 85px;
+}
+

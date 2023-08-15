@@ -1,0 +1,20 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto 0 auto;
+  padding: 48px 32px 61px 32px;
+}
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 52px */
+  letter-spacing: 1.2px;
+  margin-bottom: 85px;
+}

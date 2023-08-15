@@ -1,0 +1,80 @@
+.container {
+  width: 300px;
+  margin-bottom: 44px;
+}
+.img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5%;
+  object-fit: cover;
+}
+.priceBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.h6 {
+  color: #3a3a3a;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+}
+.discount {
+  color: #ff32a1;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+}
+.bigPrice {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 39px */
+  letter-spacing: 0.9px;
+}
+.smallPrice {
+  color: #8b8b8b;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+  text-decoration-line: line-through;
+}
+.button {
+  width: 279px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 21px;
+  border: 2px solid #393;
+  background: #f1fff1;
+  color: #393;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out;
+  transform: translateY(280%);
+  position: absolute;
+}
+
+.container:hover .button {
+  opacity: 1;
+}
+.imageContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
