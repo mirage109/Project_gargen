@@ -7,7 +7,7 @@ import shoppingbag from "../../images/shopping_bag_icon.svg";
 
 export const Header = () => {
   const totalItems = useSelector((state) => state.basket.products.reduce((total, product) => total + product.quantity, 0));
-  const location = useLocation(); // Получите текущий путь с помощью useLocation
+  const location = useLocation(); 
 
   return (
     <header className={style.header}>
