@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1384px;
+  max-width: 1440px;
   height: 72px;
   background: #fff;
   margin: 0 auto;
-  padding-top: 19px;
+  padding: 48px 32px 50px 32px;
 }
 .logocontainer {
   display: flex;
@@ -76,4 +76,3 @@ li {
   color: #393; 
   font-weight: bold; 
 }
-
