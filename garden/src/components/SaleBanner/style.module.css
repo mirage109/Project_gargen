@@ -61,6 +61,11 @@
 .plantImage {
   position: absolute;
   right: 0;
-  transform: translateY(-10%); 
+  transform: translateY(-10%);
   object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .imageContainer {
+    display: none;
+  }
 }

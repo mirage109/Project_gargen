@@ -9,7 +9,7 @@
   gap: 199px;
 }
 .getDiscountImage{
-  width: 40%
+  width: 35%
 }
 .getDiscount img {
   width: 422px;
@@ -65,4 +65,21 @@
 .p{
     font-size: 47px;
     margin-bottom: 45px;
+}
+
+@media (max-width: 1024px) {
+  .getDiscountImage{
+    width: 20%
+  }
+  .getDiscount img {
+    width: 292px;
+    height: 292px;
+    margin-left: 21px;
+  }
+  .h2{
+    font-size: 55px;
+  }
+  .p{
+    font-size: 35px;
+  }
 }
