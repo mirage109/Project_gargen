@@ -3,9 +3,12 @@ import { useSelector } from "react-redux";
 import style from "./style.module.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAddOrderMutation } from "../../redux/productsApi";
 
 export const OrderDetail = () => {
   const basketProducts = useSelector((state) => state.basket.products);
+
+
   const totalAmount = basketProducts.reduce((total, product) => {
     if (product.discont_price !== null) {
       return total + product.discont_price * product.quantity;

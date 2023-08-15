@@ -15,6 +15,7 @@ import { SkuPage } from "./pages/SingleProductPage";
 import { SingleCategory } from "./pages/SingleCategoryPage";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/store";
+import { ThankYouPage } from "./pages/ThankYouPage";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/category/:id",
         element: <SingleCategory />,
+      },
+      {
+        path: "/thankyou",
+        element: <ThankYouPage />,
       },
     ],
   },
