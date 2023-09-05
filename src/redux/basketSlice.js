@@ -51,10 +51,15 @@ const basketSlice = createSlice({
         existingProduct.quantity = quantity;
       }
     },
+    clearBasket: (state) => {
+      state.products = [];
+      state.totalAmount = 0;
+      state.totalItems = 0;
+    },
   },
 });
 
-export const { addToBasket, removeFromBasket, updateQuantity } =
+export const { addToBasket, removeFromBasket, updateQuantity,clearBasket} =
   basketSlice.actions;
 
 export default basketSlice.reducer;

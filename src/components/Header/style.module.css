@@ -55,6 +55,9 @@ li {
   font-weight: 500;
   line-height: 130%;
 }
+li:hover {
+  font-weight: bold;
+}
 
 .itemCount {
   position: absolute;
@@ -72,7 +75,29 @@ li {
   position: relative;
   display: inline-block;
 }
+
 .activeLink {
-  color: #393; 
-  font-weight: bold; 
+  color: #393;
+  font-weight: bold;
+}
+@media (max-width: 900px) {
+  .navContainer {
+    gap: 50px;
+  }
+  .menu {
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .navContainer {
+    gap: 20px;
+  }
+  .catalog {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  .menu {
+    display: none;
+  }
 }

@@ -74,7 +74,7 @@
   margin-bottom: 20px;
 }
 .map {
-  max-width: 1344px;
+  max-width: 1440px;
   height: 525px;
 }
 .hours {
@@ -84,4 +84,24 @@
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
+}
+@media (max-width: 1024px){
+  .h2 {
+    font-size: 30px;
+  }
+  .p {
+    font-size: 50px;
+  }
+  .visitcard {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+@media (max-width: 768px){
+  .p {
+    font-size: 40px;
+  }
+  .visitcardContact {
+    width: 100%;
+  }
 }

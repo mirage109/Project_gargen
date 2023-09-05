@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import style from "./style.module.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAddOrderMutation } from "../../redux/productsApi";
+import { clearBasket } from "../../redux/basketSlice";
 
 export const OrderDetail = () => {
   const basketProducts = useSelector((state) => state.basket.products);
-
+  const dispatch = useDispatch();
 
   const totalAmount = basketProducts.reduce((total, product) => {
     if (product.discont_price !== null) {
@@ -19,21 +20,31 @@ export const OrderDetail = () => {
   const formattedTotalAmount = totalAmount.toFixed(2);
 
   const [phoneNumber, setPhoneNumber] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (phoneNumber.trim() === "" || phoneNumber.length < 10) {
-      toast.error(
-        "Phone number is required and should have at least 10 digits."
-      );
-      return;
-    }
-  };
-
+  const [addOrder] = useAddOrderMutation();
   const handleInputChange = (e) => {
     const inputPhoneNumber = e.target.value.replace(/[^\d]/g, "");
     setPhoneNumber("+" + inputPhoneNumber);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (phoneNumber.length < 10) {
+      toast.error("Phone number is required and should have at least 10 digits.");
+      return;
+    }
+    try {
+      const response = await addOrder({
+        ...basketProducts,
+        phoneNumber,
+      }).unwrap();
+  
+      if (response) {
+        dispatch(clearBasket());
+        toast.success("Order submitted successfully!");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -46,8 +57,7 @@ export const OrderDetail = () => {
           <span className={style.currency}>$</span>
         </p>
       </div>
-      <form className={style.form}
-      onSubmit={handleSubmit}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <input
           className={style.input}
           type="tel"

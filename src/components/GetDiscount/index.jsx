@@ -1,28 +1,37 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
 import gnom from "../../images/gnom.png";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useAddPhoneNumberMutation } from "../../redux/productsApi";
 
 export const GetDiscount = () => {
-  const [phoneNumber, setPhoneNumber] = useState("+49"); 
+  const [phoneNumber, setPhoneNumber] = useState("+49");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [addPhoneNumber] = useAddPhoneNumberMutation();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    if (phoneNumber.trim() === "" || phoneNumber.length < 10) {
-      toast.error("Phone number is required and should have at least 10 digits.");
+
+    if (phoneNumber.length < 10) {
+      toast.error(
+        "Phone number is required and should have at least 10 digits."
+      );
       return;
     }
-  
-    setIsFormSubmitted(true);
+    try {
+      const response = await addPhoneNumber({ phoneNumber });
+      if (response) {
+        setIsFormSubmitted(true);
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
   const handleInputChange = (e) => {
     const inputPhoneNumber = e.target.value.replace(/[^\d]/g, "");
-    setPhoneNumber("+"+inputPhoneNumber); 
+    setPhoneNumber("+" + inputPhoneNumber);
   };
 
   return (
@@ -34,7 +43,9 @@ export const GetDiscount = () => {
         {isFormSubmitted ? (
           <div>
             <h2 className={style.h2}>Success!</h2>
-            <p className={style.p}>Check your text <br/> messages.</p>
+            <p className={style.p}>
+              Check your text <br /> messages.
+            </p>
           </div>
         ) : (
           <>
@@ -45,10 +56,10 @@ export const GetDiscount = () => {
                 className={style.input}
                 type="text"
                 placeholder="+49"
-                inputMode="numeric" 
-                maxLength="13" 
+                inputMode="numeric"
+                maxLength="13"
                 value={phoneNumber}
-                onChange={handleInputChange} 
+                onChange={handleInputChange}
               />
               <button className={style.button} type="submit">
                 Get a discount

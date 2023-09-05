@@ -1,6 +1,6 @@
 .gridContainer {
   display: grid;
-  grid-template-columns: 27% auto 25% 30px;
+  grid-template-columns: 25% auto 25% 30px;
   align-items: center;
   gap: 10px;
   padding: 10px;
@@ -26,23 +26,26 @@
 .buttonCounter {
   border: none;
   background-color: transparent;
-  width: 40px;
+  width: 100%;
   height: 100%;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+.column4 {
+  width: 30px;
+  grid-column: 4 / span 1;
+  height: 100%;
+}
 .buttonDelete {
   border: none;
   background-color: transparent;
-  width: 30px;
-  height: 100%;
   border-radius: 12px;
-  grid-column: 4 / span 1;
   display: flex;
   justify-content: flex-start;
 }
+
 .buttonCounter:hover {
   background-color: #f2f2f2;
 }
@@ -52,6 +55,11 @@
 .buttonCounter:focus {
   outline: none;
 }
+.buttonDelete:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
 .quantity {
   color: #000;
   font-family: Montserrat;
@@ -69,7 +77,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 318px;
+  width: 100%;
 }
 
 .column3 {
@@ -97,4 +105,35 @@
   line-height: 130%;
   letter-spacing: 0.6px;
   text-decoration-line: line-through;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background: #a7a7a7;
+  opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+  .img {
+    width: 130px;
+    height: 120px;
+  }
+  .counter {
+    width: 100px;
+    height: 30px;
+  }
+  .bigPrice {
+    font-size: 25px;
+  }
+  .smallPrice {
+    font-size: 14px;
+  }
+  .h3 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .img {
+    display: none;
+  }
 }

@@ -1,5 +1,5 @@
 .getDiscount {
-  max-width: 1440px; 
+  max-width: 1440px;
   height: 476px;
   background: linear-gradient(223deg, #393 0%, #006300 100%);
   margin: 0 auto 0 auto;
@@ -8,8 +8,8 @@
   align-items: center;
   gap: 199px;
 }
-.getDiscountImage{
-  width: 35%
+.getDiscountImage {
+  width: 35%;
 }
 .getDiscount img {
   width: 422px;
@@ -59,27 +59,39 @@
   line-height: 120%;
   letter-spacing: 2.7px;
 }
-.h2{
-    font-size: 90px;
+.h2 {
+  font-size: 90px;
 }
-.p{
-    font-size: 47px;
-    margin-bottom: 45px;
+.p {
+  font-size: 47px;
+  margin-bottom: 45px;
 }
 
 @media (max-width: 1024px) {
-  .getDiscountImage{
-    width: 20%
+  .getDiscountImage {
+    width: 20%;
   }
   .getDiscount img {
     width: 292px;
     height: 292px;
     margin-left: 21px;
   }
-  .h2{
+  .h2 {
     font-size: 55px;
   }
-  .p{
+  .p {
     font-size: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .getDiscountImage {
+    display: none;
+  }
+  .getDiscount img {
+    display: none;
+  }
+  .getDiscountForm{
+    margin:0 auto;
+    padding: 0 20px 0 20px;
   }
 }

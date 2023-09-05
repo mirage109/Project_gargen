@@ -68,4 +68,7 @@
   .imageContainer {
     display: none;
   }
+  .textContainer {
+    width: 100%;
+  }
 }

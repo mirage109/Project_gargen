@@ -37,7 +37,7 @@ export const BasketItem = ({ product }) => {
           alt={product.title}
         />
         <div className={style.column2}>
-          <h3>{product.title}</h3>
+          <h3 className={style.h3}>{product.title}</h3>
           <div className={style.counter}>
             <button className={style.buttonCounter} onClick={handleDecrement}>
               <img src={minus} alt="-" />
@@ -49,21 +49,32 @@ export const BasketItem = ({ product }) => {
           </div>
         </div>
         <div className={style.column3}>
-        {product.discont_price !== null ? (
-          <>
-          <p className={style.bigPrice}>
-            {product.discont_price}
-            <span>$</span>
-          </p>
-          <p className={style.smallPrice}>{product.price}<span>$</span></p>
-          </>
-        ) : (
-          <p className={style.bigPrice}>{product.price}<span>$</span></p>
-        )}
-      </div>
-        <button className={style.buttonDelete} onClick={handleRemoveFromBasket}>
-          <img src={deleteButton} alt="X" />
-        </button>
+          {product.discont_price !== null ? (
+            <>
+              <p className={style.bigPrice}>
+                {product.discont_price}
+                <span>$</span>
+              </p>
+              <p className={style.smallPrice}>
+                {product.price}
+                <span>$</span>
+              </p>
+            </>
+          ) : (
+            <p className={style.bigPrice}>
+              {product.price}
+              <span>$</span>
+            </p>
+          )}
+        </div>
+        <div className={style.column4}>
+          <button
+            className={style.buttonDelete}
+            onClick={handleRemoveFromBasket}
+          >
+            <img src={deleteButton} alt="X" />
+          </button>
+        </div>
       </div>
       <img src={line} alt="line" className={style.line} />
     </div>
