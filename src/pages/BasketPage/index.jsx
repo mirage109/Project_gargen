@@ -22,10 +22,12 @@ export const BasketPage = () => {
               <h4 className={style.h4}>Back to store </h4>
               <img src={forward} alt=">" />
             </div>
+            
           </NavLink>
+          
           <div className={style.basketDetail}>
             <div className={style.basketContent}>
-              {/* <img src={line} alt="line" /> */}
+              
               {basketProducts.map((product) => (
                 <BasketItem key={product.id} product={product} />
               ))}

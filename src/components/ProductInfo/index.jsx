@@ -15,7 +15,7 @@ export const ProductInfo = ({ dates, discount }) => {
     
     toast.success('Product added to cart!', {
       position: toast.POSITION.TOP_RIGHT,
-      autoClose: 3000, // 3 seconds
+      autoClose: 3000, 
     });
   };
   
@@ -23,7 +23,7 @@ export const ProductInfo = ({ dates, discount }) => {
     <div>
       <h2 className={style.title}>{dates.title}</h2>
       <div className={style.container}>
-        <div>
+        <div className={style.imageContainer}>
           <img
             className={style.img}
             src={`http://localhost:3333${dates.image}`}
