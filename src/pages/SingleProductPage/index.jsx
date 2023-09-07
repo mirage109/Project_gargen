@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useGetProductItemQuery } from "../../redux/productsApi";
 import { ProductInfo } from "../../components/ProductInfo";
+import { NotFound } from "../../components/NotFound";
 
 export const SkuPage = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ export const SkuPage = () => {
       {isLoading ? (
         <p>loading...</p>
       ) : error ? (
-        <p>Error</p>
+        <NotFound />
       ) : (
         <ProductInfo dates={dates} discount={discount} />
       )}

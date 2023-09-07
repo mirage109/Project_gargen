@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import style from "./style.module.css";
 import { Filter } from "../Filter";
 import { useProductFilter } from "../../utils/useProductFilter.js";
+import { NotFound } from "../NotFound";
 
 export const ProductList = () => {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
@@ -34,7 +35,7 @@ export const ProductList = () => {
         setToPrice={setToPrice}
       />
       {isLoading && <p>Loading...</p>}
-      {error && <p>Error</p>}
+      {error && <NotFound/>}
       <ul className={style.ul}>
         {sortedProducts.map((el) => (
           <NavLink to={`/products/${el.id}`} key={el.id}>
