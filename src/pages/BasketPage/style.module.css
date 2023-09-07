@@ -11,7 +11,6 @@
 }
 .basketDetail {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -37,4 +36,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 130%; 
+}
+@media (max-width: 968px) {
+.basketDetail {
+  flex-direction: column;
+  align-items: center;
+}
 }

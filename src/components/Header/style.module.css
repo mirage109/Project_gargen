@@ -80,12 +80,15 @@ li:hover {
   color: #393;
   font-weight: bold;
 }
+.mobileMenu {
+  display: none;
+} 
 @media (max-width: 900px) {
   .navContainer {
-    gap: 50px;
+    gap: 80px;
   }
   .menu {
-    gap: 20px;
+    width: 301px;
   }
 }
 @media (max-width: 768px) {
@@ -95,9 +98,15 @@ li:hover {
   .catalog {
     display: none;
   }
+  .menu {
+    width: 271px;
+  }
 }
 @media (max-width: 425px) {
   .menu {
     display: none;
+  }
+  .mobileMenu {
+    display: block;
   }
 }

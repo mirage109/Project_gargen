@@ -25,7 +25,7 @@ export const BasketPage = () => {
           </NavLink>
           <div className={style.basketDetail}>
             <div className={style.basketContent}>
-              <img src={line} alt="line" />
+              {/* <img src={line} alt="line" /> */}
               {basketProducts.map((product) => (
                 <BasketItem key={product.id} product={product} />
               ))}

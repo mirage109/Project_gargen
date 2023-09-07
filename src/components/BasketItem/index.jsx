@@ -29,7 +29,7 @@ export const BasketItem = ({ product }) => {
   };
 
   return (
-    <div>
+    <div className={style.itemContainer}>
       <div className={style.gridContainer}>
         <img
           className={style.img}

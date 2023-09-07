@@ -6,8 +6,13 @@ import logo from "../../images/logo.svg";
 import shoppingbag from "../../images/shopping_bag_icon.svg";
 
 export const Header = () => {
-  const totalItems = useSelector((state) => state.basket.products.reduce((total, product) => total + product.quantity, 0));
-  const location = useLocation(); 
+  const totalItems = useSelector((state) =>
+    state.basket.products.reduce(
+      (total, product) => total + product.quantity,
+      0
+    )
+  );
+  const location = useLocation();
 
   return (
     <header className={style.header}>
@@ -21,17 +26,82 @@ export const Header = () => {
           <NavLink to="/category">Catalog</NavLink>
         </div>
       </div>
-
+      <div className={style.mobileMenu}>
+        <ul>
+          <li>
+            <NavLink
+              to="/category"
+              className={
+                location.pathname === "/category"
+                  ? style.activeLink
+                  : style.navLink
+              }
+            >
+              Catalog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/products"
+              className={
+                location.pathname === "/products"
+                  ? style.activeLink
+                  : style.navLink
+              }
+            >
+              All Products
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/sales"
+              className={
+                location.pathname === "/sales"
+                  ? style.activeLink
+                  : style.navLink
+              }
+            >
+              All sales
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       <div className={style.navContainer}>
         <ul className={style.menu}>
           <li>
-            <NavLink to="/" className={location.pathname === "/" ? style.activeLink : style.navLink}> Main Page</NavLink>
+            <NavLink
+              to="/"
+              className={
+                location.pathname === "/" ? style.activeLink : style.navLink
+              }
+            >
+              {" "}
+              Main Page
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/products" className={location.pathname === "/products" ? style.activeLink : style.navLink}>All Products</NavLink>
+            <NavLink
+              to="/products"
+              className={
+                location.pathname === "/products"
+                  ? style.activeLink
+                  : style.navLink
+              }
+            >
+              All Products
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/sales" className={location.pathname === "/sales" ? style.activeLink : style.navLink}>All sales</NavLink>
+            <NavLink
+              to="/sales"
+              className={
+                location.pathname === "/sales"
+                  ? style.activeLink
+                  : style.navLink
+              }
+            >
+              All sales
+            </NavLink>
           </li>
         </ul>
         <div>
