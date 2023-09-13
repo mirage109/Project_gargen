@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice.js"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { baseUrl } from "../../config";
 
 export const ProductInfo = ({ dates, discount }) => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export const ProductInfo = ({ dates, discount }) => {
         <div className={style.imageContainer}>
           <img
             className={style.img}
-            src={`http://localhost:3333${dates.image}`}
+            src={baseUrl+dates.image}
             alt={dates.title}
           />
         </div>

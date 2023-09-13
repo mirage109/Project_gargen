@@ -1,8 +1,6 @@
-import React from 'react';
-import { DiscountedProductList } from '../../components/DiscountedProductList';
+import React from "react";
+import { DiscountedProductList } from "../../components/DiscountedProductList";
 
 export const SalesPage = () => {
-    return(
-        <DiscountedProductList/>
-    )
-}
+  return <DiscountedProductList />;
+};

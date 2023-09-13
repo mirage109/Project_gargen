@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useLocation } from "react-router-dom"; // Импортируйте useLocation
+import { NavLink, useLocation } from "react-router-dom";
 import style from "./style.module.css";
 import logo from "../../images/logo.svg";
 import shoppingbag from "../../images/shopping_bag_icon.svg";

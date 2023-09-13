@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  /* justify-content: space-between; */
   gap: 4%;
 }
 .container {
@@ -16,7 +15,7 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%; /* 52px */
+  line-height: 130%; 
   letter-spacing: 1.2px;
   margin-bottom: 85px;
 }

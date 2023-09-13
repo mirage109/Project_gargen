@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { baseUrl } from "../../config";
 
 export const ProductItem = ({ id, image, title, price, discont_price }) => {
   const discount = () => {
@@ -32,7 +33,7 @@ export const ProductItem = ({ id, image, title, price, discont_price }) => {
       <div className={style.imageContainer}>
         <img
           className={style.img}
-          src={`http://localhost:3333${image}`}
+          src={baseUrl+image}
           alt={title}
         />
         <button className={style.button} onClick={handleAddToCart}>Add to cart</button>

@@ -6,6 +6,7 @@ import line from "../../images/linebasket.png";
 import minus from "../../images/minus.svg";
 import plus from "../../images/plus.svg";
 import deleteButton from "../../images/delete.svg";
+import { baseUrl } from "../../config";
 
 export const BasketItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export const BasketItem = ({ product }) => {
       <div className={style.gridContainer}>
         <img
           className={style.img}
-          src={`http://localhost:3333${product.image}`}
+          src={baseUrl+product.image}
           alt={product.title}
         />
         <div className={style.column2}>
