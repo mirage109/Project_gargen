@@ -3,7 +3,6 @@ import { BasketItem } from "../../components/BasketItem";
 import { OrderDetail } from "../../components/OrderDetail";
 import React from "react";
 import { useSelector } from "react-redux";
-import line from "../../images/linebasket.png";
 import style from "./style.module.css";
 import { NavLink } from "react-router-dom";
 import forward from "../../images/forward.svg";
